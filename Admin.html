@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Admin Menu</h2>
+      <ul>
+        <li><a href="#">View</a></li>
+        <li><a href="#">Post</a></li>
+      </ul>
+      <div class="logout">
+        <a href="log-in.html">Log Out</a>
+      </div>
+    </div>
+    <div class="main">
+      <h1>Post</h1>
+      <form>
+        <label>Title:</label>
+        <input type="text" />
+        <label>Slug:</label>
+        <input type="text" />
+        <label>Content:</label>
+        <textarea></textarea>
+        <label>Featured Image:</label>
+        <input type="file" />
+        <label>Author:</label>
+        <select>
+          <option value="author1">Author 1</option>
+          <option value="author2">Author 2</option>
+          <option value="author3">Author 3</option>
+        </select>
+        <label>Category:</label>
+        <select>
+          <option value="category1">Category 1</option>
+          <option value="category2">Category 2</option>
+          <option value="category3">Category 3</option>
+        </select>
+        <label>Featured:</label>
+        <div class="featured">
+          <input type="radio" name="featured" value="yes" /> Yes
+        </div>
+        <div class="featured">
+          <input type="radio" name="featured" value="no" /> No
+        </div>
+        <button type="submit">Post</button>
+      </form>
+    </div>
+  </body>
+</html>
