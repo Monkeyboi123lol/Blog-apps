@@ -2,19 +2,21 @@
 <html lang="en">
   <head>
     <title>Life Story Blog</title>
-    <link rel="stylesheet" href="2 style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/2 style.css') }}"
+    />
   </head>
   <body>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sign up</a></li>
+        <li><a href="#">Log in</a></li>
+      </ul>
+    </nav>
     <h1>Life Story Blog</h1>
     <p>Where i share my life stories.</p>
-
-    <hr />
-    <a href="#">Web Development</a>
-    <a href="#">School</a>
-    <a href="#">Games</a>
-    <a href="#">Anime</a>
-    <a href="#">Thoughts</a>
-    <hr />
 
     <section class="featured">
       <h2>Featured Post</h2>
@@ -67,6 +69,7 @@
         <span>"2026-06-08"</span>
         <a href="#">Read More -> </a>
       </div>
+      "
     </div>
   </body>
 </html>

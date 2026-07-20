@@ -30,7 +30,10 @@ ul {
   list-style-type: none;
   background-color: #f0f0f0;
   padding: 15px;
-  width: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  text-align: center;
   border: #010636f5 solid 1px;
 }
 
@@ -63,4 +66,10 @@ ul {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+nav {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
 }
