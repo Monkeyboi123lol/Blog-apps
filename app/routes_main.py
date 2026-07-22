@@ -9,9 +9,9 @@ def index():
 # signup page
 @main_bp.route('/signup', methods=['GET', 'POST'])
 def signup():
-    return render_template('signup.html')
+    return render_template('sign-up.html')
 
 # login page
 @main_bp.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    return render_template('log-in.html')

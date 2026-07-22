@@ -4,15 +4,15 @@
     <title>Life Story Blog</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/2 style.css') }}"
+      href="{{ url_for('static', filename='css/style2.css') }}"
     />
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Sign up</a></li>
-        <li><a href="#">Log in</a></li>
+        <li><a href="{{ url_for('main.signup') }}">Sign up</a></li>
+        <li><a href="{{ url_for('main.login') }}">Log in</a></li>
       </ul>
     </nav>
     <h1>Life Story Blog</h1>
