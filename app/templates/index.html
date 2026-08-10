@@ -8,6 +8,12 @@
     />
   </head>
   <body>
+    (% if session.get('user_id') %)
+    <script>
+      alert("Welcome, {{ session.get('user_id') }}! You are logged in");
+    </script>
+    (% endif %)
+
     <nav>
       <ul>
         <li><a href="#">Home</a></li>

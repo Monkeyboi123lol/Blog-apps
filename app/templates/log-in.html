@@ -11,11 +11,11 @@
     />
   </head>
   <body>
-    <form class="box" action="" onsubmit="">
+    <form class="box" action="{{ url_for('main.login') }}" method="POST">
       <h2 class="title">Log In</h2>
       <div class="login-page">
-        <input type="text" name="" placeholder="Username" />
-        <input type="password" name="" placeholder="Password" />
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
       </div>
       <div class="login-button">
         <input type="submit" name="" value="Log In" />
