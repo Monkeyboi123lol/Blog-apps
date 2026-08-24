@@ -47,3 +47,9 @@ def login():
 
         
     return render_template('log-in.html')
+
+@main_bp.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    flash('Logged out successfully', 'success')
+    return redirect(url_for('main.index'))
