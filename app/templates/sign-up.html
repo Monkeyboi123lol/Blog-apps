@@ -2,25 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
+
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/ style.css') }}"
+      href="{{ url_for('static', filename='css/style2.css') }}"
     />
   </head>
+
   <body>
-    <form class="box" action="{{ url_for('main.signup') }}" method="POST">
-      <h2 class="title">Sign Up</h2>
-      <div class="sign-up-page">
-        <input type="text" name="username" placeholder="Username" />
-        <input type="email" name="email" placeholder="Email" />
-        <input type="password" name="password" placeholder="Password" />
-      </div>
-      <div class="sign-up-button">
-        <input type="submit" name="" value="Sign Up" />
-      </div>
+    <form class="box">
+      <h2>Sign Up</h2>
+
+      <input type="text" placeholder="Username" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Password" />
+
+      <input class="button" type="submit" value="Sign Up" />
     </form>
   </body>
 </html>
