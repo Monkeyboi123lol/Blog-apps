@@ -10,6 +10,13 @@
       href="{{ url_for('static', filename='css/style2.css') }}"
     />
   </head>
+
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('main.index') }}">Home</a></li>
+      <li><a href="{{ url_for('main.signup') }}">Sign Up</a></li>
+    </ul>
+  </nav>
   <body>
     <form class="box" action="{{ url_for('main.login') }}" method="POST">
       <h2 class="title">Log In</h2>
