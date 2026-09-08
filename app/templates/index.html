@@ -14,7 +14,7 @@
 
         {% if session.get('user_id') %}
         <script>
-          alert("Welcome, {{ session.get('user_id') }}! You are logged in");
+          alert("Welcome, {{ session.get('username') }}! You are logged in");
         </script>
         <li><a href="{{ url_for('main.logout') }}">Log out</a></li>
 

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style2.css') }}"
+    />
+  </head>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('main.index') }}">Home</a></li>
+      <li><a href="{{ url_for('main.signup') }}">Sign Up</a></li>
+      <li><a href="{{ url_for('main.login') }}">Log In</a></li>
+    </ul>
+  </nav>
+  <body>
+    <form class="box" action="" method="POST">
+      <h2 class="title">Admin Log In</h2>
+      <div class="login-page">
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+      </div>
+      <div class="login-button">
+        <input type="submit" name="" value="Log In" />
+      </div>
+    </form>
+  </body>
+</html>

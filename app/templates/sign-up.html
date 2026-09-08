@@ -16,15 +16,16 @@
       <ul>
         <li><a href="{{ url_for('main.index') }}">Home</a></li>
         <li><a href="{{ url_for('main.login') }}">Log in</a></li>
+        <li><a href="{{ url_for('main.signup') }}">Sign Up</a></li>
       </ul>
     </nav>
 
-    <form class="box">
+    <form class="box" action="{{ url_for('main.signup') }}" method="POST">
       <h2>Sign Up</h2>
 
-      <input type="text" placeholder="Username" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
+      <input type="text" placeholder="Username" name="username" />
+      <input type="email" placeholder="Email" name="email" />
+      <input type="password" placeholder="Password" name="password" />
 
       <input class="button" type="submit" value="Sign Up" />
     </form>

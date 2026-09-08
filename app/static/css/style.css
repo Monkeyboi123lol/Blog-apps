@@ -1,40 +1,40 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #010636f5;
+  background-color: #050505f5;
   text-align: center;
 }
 
 h1 {
   margin-top: 50px;
-  color: #6d6c6c;
+  color: #fefefe;
 }
 
 p {
-  color: #666;
+  color: #fff5f5;
   font-size: 18px;
   margin-top: 20px;
 }
 
 a {
-  color: #1e00ff;
+  color: #ebeaf1;
   text-decoration: none;
   margin: 10px;
   font-weight: bold;
 }
 
 h2 {
-  color: #07002d;
+  color: #00b017;
 }
 
 ul {
   list-style-type: none;
-  background-color: #f0f0f0;
+  background-color: #013e02;
   padding: 15px;
   width: 100%;
   display: flex;
   justify-content: right;
   text-align: center;
-  border: #010636f5 solid 1px;
+  border: #020202f5 solid 1px;
 }
 
 .card {
@@ -48,11 +48,11 @@ ul {
 
 .card h3 {
   margin-top: 0;
-  color: #333;
+  color: #fffdfd;
 }
 
 .card p {
-  color: #555;
+  color: #f3eeee;
   font-size: 16px;
 }
 

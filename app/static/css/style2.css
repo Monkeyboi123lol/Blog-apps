@@ -22,13 +22,16 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: lightgray;
+  background-color: rgb(36, 36, 36);
   margin-bottom: 10px;
   height: 100vh;
 }
 
 .box {
-  background-color: white;
+  background-color: rgb(0, 0, 0);
+  h2 {
+    color: #0bbc05;
+  }
   padding: 30px;
   width: 300px;
   text-align: center;
@@ -41,7 +44,7 @@ input {
 }
 
 .button {
-  background-color: purple;
+  background-color: rgb(7, 108, 2);
   color: white;
   border: none;
   cursor: pointer;
@@ -49,7 +52,7 @@ input {
 
 ul {
   list-style-type: none;
-  background-color: #f0f0f0;
+  background-color: #013e02;
   width: 95%;
   display: flex;
   padding: 15px;
@@ -63,7 +66,7 @@ nav {
   width: 100%;
 }
 a {
-  color: #1e00ff;
+  color: #fcfcff;
   text-decoration: none;
   margin: 10px;
   font-weight: bold;
