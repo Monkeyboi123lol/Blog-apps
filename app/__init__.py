@@ -13,6 +13,9 @@ def create_app():
     from .routes_main import main_bp
     app.register_blueprint(main_bp)
 
+    from .routes_admin import admin_bp
+    app.register_blueprint(admin_bp, url_prefix='/admin')
+
     with app.app_context():
         db.create_all()
 
