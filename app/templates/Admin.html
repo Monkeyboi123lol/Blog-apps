@@ -7,52 +7,67 @@
     <title>Admin Page</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/style2.css') }}"
+      href="{{ url_for('static', filename='css/style3.css') }}"
     />
   </head>
   <body>
     <div class="sidebar">
-      <h2>Admin Menu</h2>
-      <ul>
-        <li><a href="#">View</a></li>
-        <li><a href="#">Post</a></li>
-      </ul>
-      <div class="logout">
-        <a href="log-in.html">Log Out</a>
-      </div>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('main.index') }}">Home</a></li>
+          <li><a href="{{ url_for('main.signup') }}">Sign Up</a></li>
+          <li><a href="{{ url_for('main.login') }}">Log In</a></li>
+          <li><a href="">Admin Panel</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="admin-header">
+      <h2>Admin Center</h2>
+      <a href="">Log Out</a>
     </div>
     <div class="main">
-      <h1>Post</h1>
+      <h1>New Post</h1>
       <form>
         <label>Title:</label>
         <input type="text" />
-        <label>Slug:</label>
+        <label>Slug URL Tag:</label>
         <input type="text" />
-        <label>Content:</label>
-        <textarea></textarea>
-        <label>Featured Image:</label>
-        <input type="file" />
-        <label>Author:</label>
+        <label>Featured Image URL:</label>
+        <input type="text" />
+        <label>Description:</label>
+        <input type="text" />
+        <label>Publish Status:</label>
         <select>
-          <option value="author1">Author 1</option>
-          <option value="author2">Author 2</option>
-          <option value="author3">Author 3</option>
+          <option value="draft">Draft</option>
+          <option value="published">Published</option>
         </select>
-        <label>Category:</label>
-        <select>
-          <option value="category1">Category 1</option>
-          <option value="category2">Category 2</option>
-          <option value="category3">Category 3</option>
-        </select>
-        <label>Featured:</label>
-        <div class="featured">
-          <input type="radio" name="featured" value="yes" /> Yes
-        </div>
-        <div class="featured">
-          <input type="radio" name="featured" value="no" /> No
-        </div>
-        <button type="submit">Post</button>
       </form>
+      <button type="submit">Post</button>
+      <div class="post-list">
+        <h1>Managed Posts</h1>
+        <ul>
+          <li>
+            <div>
+              <h1>Techno Blade</h1>
+              <p>Techno blade was the best minecraft play ever!</p>
+            </div>
+            <div>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h1>Techno Blade</h1>
+              <p>Techno blade was the best minecraft play ever!</p>
+            </div>
+            <div>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
