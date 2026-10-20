@@ -173,3 +173,9 @@ nav ul {
   justify-content: space-between;
   align-items: center;
 }
+
+.post-list {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
