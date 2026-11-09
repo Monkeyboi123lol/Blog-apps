@@ -27,43 +27,56 @@
     </div>
     <div class="main">
       <h1>New Post</h1>
-      <form>
+      <form action="{{ url_for('admin.create') }}">
         <label>Title:</label>
-        <input type="text" />
+        <input type="text" name="title" />
         <label>Slug URL Tag:</label>
-        <input type="text" />
+        <input type="text" name="slug" />
         <label>Featured Image URL:</label>
-        <input type="text" />
+        <input type="text" name="image_url" />
         <label>Description:</label>
-        <input type="text" />
+        <input type="text" name="description" />
         <label>Publish Status:</label>
         <select>
-          <option value="draft">Draft</option>
-          <option value="published">Published</option>
+          <option value="Draft">Draft</option>
+          <option value="Published">Published</option>
         </select>
+        <button type="submit">Post</button>
       </form>
-      <button type="submit">Post</button>
+
       <div class="post-list">
         <h1>Managed Posts</h1>
         <ul>
+          {% if not contents %}
+          <p>No posts exist.</p>
+          {% endif %} {% for item in contents %}
           <div>
-            <h1>Techno Blade</h1>
-            <p>Techno blade was the best minecraft play ever!</p>
-            <p class="status2">Published</p>
+            <h1>{{ item.title }}</h1>
+            <p>{{ item.description }}</p>
+            <p class="status2">{{ item.status }}</p>
           </div>
           <div>
-            <button>Draft</button>
-            <button>Delete</button>
+            {% if item.status == 'Draft' %}
+            <a
+              href="{{ url_for('admin.update_status', item_id=item.id, new_status='Published') }}"
+              >Published</a
+            >
+            {% else %}
+            <a
+              href="{{ url_for('admin.update_status', item_id=item.id, new_status='Draft') }}"
+              >Unpublish</a
+            >
+            {% endif %}
+
+            <a
+              href="{{ url_for('admin.delete', item_id=item.id) }}"
+              onclick="
+                return confirm('Are you sure you want to delete this post?');
+              "
+              >Delete</a
+            >
           </div>
-          <div>
-            <h1>AI taking over</h1>
-            <p>AI is taking over the world!</p>
-            <p class="status">Draft</p>
-          </div>
-          <div>
-            <button>Publish</button>
-            <button>Delete</button>
-          </div>
+          {% endfor %}
         </ul>
       </div>
     </div>
