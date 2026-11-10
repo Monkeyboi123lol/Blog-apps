@@ -38,3 +38,14 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<User {self.username}>'
+
+    class Content(db.Model):
+        __tablename__ = 'contents'
+
+        id = db.Column(db.Integer, primary_key=True)
+        title = db.Column(db.String(200), nullable=False)
+        slug = db.Column(db.String(200), unique=True, nullable=False)
+        description = db.Column(db.Text, nullable=False)
+        image_url = db.Column(db.String(500), nullable=True)
+        status = db.Column(db.String(20), default='Draft')
+        created_at = db.Column(db.DateTime, default=datetime.utcnow)

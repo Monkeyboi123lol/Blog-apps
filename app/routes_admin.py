@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
 from app.models import db
+from app.models import Content    
 admin_bp = Blueprint('admin', __name__)
 
 ADMIN_USER = 'admin'
@@ -26,4 +27,22 @@ def dashboard():
     if not session.get('logged_in'):
         flash('Please log in to access the admin dashboard', 'error')
         return redirect(url_for('admin.login'))
-    return render_template('Admin.html')
+    all_contents = Content.query.order_by(Content.created_at.desc())
+    return render_template('Admin.html', contents=all_contents)
+
+@admin_bp.route('/create', methods=['POST'])
+def create():
+    if not session.get('logged_in'):
+        flash('Please log in to access the admin dashboard', 'error')
+        return redirect(url_for('admin.login'))
+    new_item = Content(
+        title = request.form.get('title'),
+        slug = request.form.get('slug').strip().replace(' ', '-'),
+        description = request.form.get('description'),
+        image_url = request.form.get('image_url'),
+        status = request.form.get('status')
+    )
+    db.session.add(new_item)
+    db.session.commit()
+    flash('Content created successfully!', 'success')
+    return redirect(url_for('admin.dashboard'))
