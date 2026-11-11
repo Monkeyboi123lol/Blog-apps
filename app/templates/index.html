@@ -34,53 +34,27 @@
       <p>By Awol</p>
     </section>
 
+    {% if not contents %}
+    <section class="featured">
+      <p>No posts exist.</p>
+    </section>
+    {% endif %} {% for item in contents %}
     <div class="card">
-      <img src="img/BI-riverside-south.png" alt="School Image" />
-      <div class="content">
-        <h2>My School Journey</h2>
-        <p>By Awol</p>
+      {% if item.image_url %}
+      <img src="{{ item.image_url }}" alt="{{ item.title }}" />
+      {% else %}
+      <p>No image available for this post.</p>
+      {% endif %}
 
-        <p>
-          This is a simple blog post about my school journey which i am
-          currently partaking in.
-        </p>
+      <div class="content">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
       </div>
       <div class="Footer">
-        <span>"2026-06-08"</span>
+        <span>{{ item.created_at.strftime("%Y-%m-%d") }}</span>
         <a href="#">Read More -> </a>
       </div>
     </div>
-
-    <div class="card">
-      <img src="img/Game.webps" alt="Games Image" />
-      <div class="content">
-        <h2>Games</h2>
-        <p>By Awol</p>
-
-        <p>
-          This is a simple blog post about games which i am currently playing
-          and some thoughts about them and thier mechanics, Players and fanbase.
-        </p>
-      </div>
-      <div class="Footer">
-        <span>"2026-06-08"</span>
-        <a href="#">Read More -> </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="" alt="Thoughts Image" />
-      <div class="content">
-        <h2>Thoughts</h2>
-        <p>By Awol</p>
-
-        <p>This is a simple blog post about some random thoughts and ideas.</p>
-      </div>
-      <div class="Footer">
-        <span>"2026-06-08"</span>
-        <a href="#">Read More -> </a>
-      </div>
-      "
-    </div>
+    {% endfor %}
   </body>
 </html>

@@ -27,7 +27,7 @@
     </div>
     <div class="main">
       <h1>New Post</h1>
-      <form action="{{ url_for('admin.create') }}">
+      <form action="{{ url_for('admin.create') }}" method="POST">
         <label>Title:</label>
         <input type="text" name="title" />
         <label>Slug URL Tag:</label>
@@ -37,7 +37,7 @@
         <label>Description:</label>
         <input type="text" name="description" />
         <label>Publish Status:</label>
-        <select>
+        <select name="status">
           <option value="Draft">Draft</option>
           <option value="Published">Published</option>
         </select>

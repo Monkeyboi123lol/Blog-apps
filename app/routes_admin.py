@@ -46,3 +46,23 @@ def create():
     db.session.commit()
     flash('Content created successfully!', 'success')
     return redirect(url_for('admin.dashboard'))
+@admin_bp.route('/update-status/<int:item_id>/<string:new_status>')
+def update_status(item_id, new_status):
+    if not session.get('logged_in'):
+        flash('Please log in to access the admin dashboard', 'error')
+        return redirect(url_for('admin.login'))
+    item = Content.query.get_or_404(item_id)
+    item.status = new_status
+    db.session.commit()
+    flash(f'Status updated to {new_status} for item {item.title}', 'success')
+    return redirect(url_for('admin.dashboard'))
+@admin_bp.route('/delete/<int:item_id>')
+def delete(item_id):
+    if not session.get('logged_in'):
+        flash('Please log in to access the admin dashboard', 'error')
+        return redirect(url_for('admin.login'))
+    item = Content.query.get_or_404(item_id)
+    db.session.delete(item)
+    db.session.commit()
+    flash(f'Item {item.title} deleted successfully!', 'success')
+    return redirect(url_for('admin.dashboard'))
